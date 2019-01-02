@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Konami Code</title>
+      <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+      <style>
+            body {
+                display: flex;
+                justify-content: center;
+          }
+          input {
+                min-width: 200px;
+                margin-top: 150px;
+                padding: 20px;
+                text-align: center;
+                color: darkcyan;
+                border: 5px solid salmon;
+                border-radius: 7%;
+                outline: none;
+                transition: 0.5s ease-in-out;
+          }
+          input:hover {
+                border: 6px solid rgb(199, 94, 82);
+                transform: scale(1.1);
+                transition: 0.3s ease-in-out;
+          }
+      </style>
+
+</head>
+<body>
+    
+    <input type="text" placeholder="Guess word" autofocus>
+
+    <script>
+
+        const input = document.querySelector("input");
+
+    
+        const pressedKey = [];
+        const secredCode = "guessing";
+
+       
+
+        window.addEventListener("keyup", (e) => {
+            // pressedKey.push(e.key);
+            // pressedKey.splice(-secredCode.length - 1, pressedKey.length - secredCode.length);
+            // if (pressedKey.join("").includes(secredCode)) {
+            //     console.log("OOOOOO WEEEE!!!");
+            // } 
+
+            if ((input.value).includes(secredCode)) {
+                input.value = "OOOOOOO WEEEE!!!... thats it";
+                input.disabled;
+                cornify_add();
+                setTimeout(() => {
+                input.value = "";
+                }, 3000);
+            }
+        })
+    
+    </script>
+</body>
+</html>
